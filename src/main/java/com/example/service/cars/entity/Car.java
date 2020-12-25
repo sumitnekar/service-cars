@@ -1,29 +1,29 @@
 package com.example.service.cars.entity;
 
-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
-import org.hibernate.annotations.Type;
-import org.hibernate.annotations.TypeDef;
-import org.hibernate.annotations.TypeDefs;
+//import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
+//import org.hibernate.annotations.Type;
+//import org.hibernate.annotations.TypeDef;
+//import org.hibernate.annotations.TypeDefs;
 
-import javax.persistence.*;
+//import javax.persistence.*;
 
 
-@TypeDefs({
-        @TypeDef(name = "json", typeClass = JsonBinaryType.class),
-        @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
-})
-@Entity
-@Table(name = "cars")
+//@TypeDefs({
+//        @TypeDef(name = "json", typeClass = JsonBinaryType.class),
+//        @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
+//})
+//@Entity
+//@Table(name = "cars")
 public class Car {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "name")
+//    @Column(name = "name")
     private String name;
 
-    @Type(type = "jsonb")
-    @Column(columnDefinition = "jsonb")
+//    @Type(type = "jsonb")
+//    @Column(columnDefinition = "jsonb")
     private String details;
 
     public long getId() {

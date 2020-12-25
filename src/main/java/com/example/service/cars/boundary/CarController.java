@@ -24,10 +24,10 @@ public class CarController {
         return carService.getCars();
     }
 
-    @PostMapping(BASE_PATH + "/cars")
-    public Car add(@RequestBody Car car) {
-        return carService.addCar(car);
-    }
+//    @PostMapping(BASE_PATH + "/cars")
+//    public Car add(@RequestBody Car car) {
+//        return carService.addCar(car);
+//    }
 //
 //    @PutMapping(BASE_PATH + "/cars/{id}")
 //    public Car update(@PathVariable("id") Car car) {
