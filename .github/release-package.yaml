@@ -1,7 +1,6 @@
 name: Continuous Interation
 on:
   push: [push]
-
   release:
     types: [created]
 
