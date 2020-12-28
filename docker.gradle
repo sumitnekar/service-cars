@@ -26,7 +26,7 @@ task buildImage {
 
 task publish {
     dependsOn(buildImage)
-    dockerPushImage
+    dependsOn(dockerPushImage)
 }
 
 
