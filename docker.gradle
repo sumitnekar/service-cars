@@ -23,3 +23,10 @@ docker {
 task buildImage {
     dependsOn(dockerBuildImage)
 }
+
+task publish {
+    dependsOn(buildImage)
+    dockerPushImage
+}
+
+
