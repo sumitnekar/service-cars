@@ -1,0 +1,32 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-docker-plugin:6.6.1'
+    }
+}
+
+apply plugin: com.bmuschko.gradle.docker.DockerSpringBootApplicationPlugin
+
+
+docker {
+    springBootApplication {
+        baseImage = 'openjdk:8-alpine'
+        ports = [9090, 8080]
+        images = ['service-cars:1.0.0', 'service-cars:latest']
+        jvmArgs = ['-Dspring.profiles.active=production', '-Xmx2048m']
+    }
+}
+
+
+task buildImage {
+    dependsOn(dockerBuildImage)
+}
+
+task publish {
+    dependsOn(buildImage)
+    dependsOn(dockerPushImage)
+}
+
+
